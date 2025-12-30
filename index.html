@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Portfolio</title>
+    <title>Naveen N | Creative Developer</title>
     <style>
-        /* --- CSS VARIABLES & RESET --- */
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;700&display=swap');
+
         :root {
-            --bg-color: #0a0a0a;
-            --text-color: #e0e0e0;
-            --accent-color: #00ff88; /* Matrix Green */
-            --secondary-bg: #1f1f1f;
-            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --mint: #76e6bf;
+            --purple: #b8a4eb;
+            --yellow: #fbf8cc;
+            --dark: #2d3436;
+            --white: #ffffff;
+            --header-font: 'Fredoka', sans-serif;
+            --body-font: 'Nunito', sans-serif;
         }
 
         * {
@@ -21,202 +24,319 @@
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: var(--font-main);
-            line-height: 1.6;
+            font-family: var(--body-font);
+            color: var(--dark);
+            overflow-x: hidden;
         }
-
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; }
 
         /* --- NAVIGATION --- */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 10%;
-            position: fixed;
-            width: 100%;
-            background-color: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(5px);
-            z-index: 1000;
-            border-bottom: 1px solid #333;
+            padding: 2rem 5%;
+            background-color: var(--mint);
         }
 
-        .logo { font-size: 1.5rem; font-weight: bold; color: var(--accent-color); }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a:hover { color: var(--accent-color); }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 10%;
+        .logo {
+            font-family: var(--header-font);
+            font-size: 2rem;
+            color: var(--white);
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
         }
 
-        .hero h1 { font-size: 4rem; margin-bottom: 10px; }
-        .hero h2 { font-size: 2rem; color: #888; margin-bottom: 20px; }
-        .hero span { color: var(--accent-color); }
-        
-        .btn {
-            display: inline-block;
-            padding: 10px 30px;
-            border: 2px solid var(--accent-color);
-            color: var(--accent-color);
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 20px;
-            width: fit-content;
-        }
-
-        .btn:hover {
-            background-color: var(--accent-color);
-            color: var(--bg-color);
-        }
-
-        /* --- SKILLS SECTION --- */
-        .section { padding: 80px 10%; }
-        .section-title { font-size: 2.5rem; margin-bottom: 40px; text-align: center; }
-        
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        .skill-tag {
-            background-color: var(--secondary-bg);
-            padding: 10px 20px;
-            border-radius: 50px;
-            border: 1px solid #333;
-        }
-
-        .skill-tag:hover { border-color: var(--accent-color); transform: translateY(-2px); transition: 0.3s;}
-
-        /* --- PROJECTS SECTION --- */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            background-color: var(--secondary-bg);
-            padding: 25px;
-            border-radius: 10px;
-            border: 1px solid #333;
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 700;
+            margin-left: 2rem;
+            font-size: 1.1rem;
             transition: 0.3s;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
+        .nav-links a:hover { color: var(--white); }
+
+        /* --- HERO SECTION (Mint Green) --- */
+        .hero {
+            background-color: var(--mint);
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10%;
+            position: relative;
         }
 
-        .project-card h3 { margin-bottom: 10px; font-size: 1.5rem; }
-        .project-card p { color: #aaa; margin-bottom: 20px; font-size: 0.9rem; }
-        .project-tech { font-size: 0.8rem; color: var(--accent-color); margin-bottom: 15px; display: block; }
+        .hero-text {
+            width: 50%;
+            z-index: 2;
+        }
 
-        /* --- CONTACT / FOOTER --- */
-        footer {
+        .greeting {
+            font-family: var(--header-font);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            transform: rotate(-2deg);
+            background: var(--yellow);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            box-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-family: var(--header-font);
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 span {
+            color: var(--white);
+            -webkit-text-stroke: 2px var(--dark); /* Outline effect */
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 90%;
+            line-height: 1.6;
+        }
+
+        /* Hero Animation Floating Shape */
+        .floating-shape {
+            position: absolute;
+            right: 10%;
+            top: 20%;
+            width: 400px;
+            height: 400px;
+            background: var(--white);
+            border-radius: 50% 40% 30% 70% / 60% 30% 70% 40%;
+            animation: morph 8s ease-in-out infinite;
+            z-index: 1;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10rem;
+        }
+
+        @keyframes morph {
+            0% { border-radius: 50% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+            100% { border-radius: 50% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
+
+        /* --- PROJECTS SECTION (Purple) --- */
+        .projects-section {
+            background-color: var(--purple);
+            padding: 5rem 10%;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: var(--header-font);
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            border: 3px solid var(--dark);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+            position: relative;
+        }
+
+        /* The "Browser Window" dots effect */
+        .card::before {
+            content: "• • •";
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 2rem;
+            line-height: 0.5;
+            color: #ddd;
+        }
+
+        .card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px rgba(0,0,0,0.2);
+        }
+
+        .card h3 {
+            margin-top: 1.5rem;
+            font-size: 1.8rem;
+            font-family: var(--header-font);
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .tech-stack {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--purple);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- EXPERIENCE SECTION (Yellow) --- */
+        .experience-section {
+            background-color: var(--yellow);
+            padding: 5rem 10%;
+        }
+
+        .timeline-item {
+            border-left: 4px solid var(--dark);
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--mint);
+            border: 3px solid var(--dark);
+            border-radius: 50%;
+        }
+
+        .exp-role { font-weight: 800; font-size: 1.2rem; }
+        .exp-company { font-family: var(--header-font); font-size: 1.5rem; color: #555; }
+        .exp-date { font-size: 0.9rem; margin-bottom: 0.5rem; display: block; color: #777;}
+
+        /* --- CONTACT SECTION --- */
+        .contact-section {
+            background-color: var(--white);
+            padding: 5rem 10%;
             text-align: center;
-            padding: 50px 0;
-            border-top: 1px solid #333;
-            color: #777;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: var(--mint);
+            color: var(--dark);
+            padding: 1rem 3rem;
+            font-size: 1.5rem;
+            font-family: var(--header-font);
+            text-decoration: none;
+            border: 3px solid var(--dark);
+            border-radius: 50px;
+            box-shadow: 5px 5px 0px var(--dark);
+            transition: 0.2s;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 8px 8px 0px var(--dark);
         }
 
         /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; } /* Hidden on mobile for simplicity */
+            h1 { font-size: 2.5rem; }
+            .hero { flex-direction: column; text-align: center; justify-content: center; }
+            .hero-text { width: 100%; }
+            .floating-shape { display: none; } /* Hide animation on phone */
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">&lt;DevName /&gt;</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="logo">naveen.n</div>
+        <div class="nav-links">
+            <a href="#projects">Work</a>
+            <a href="#experience">Journey</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
-    <section class="hero" id="about">
-        <h2>Hello, I am</h2>
-        <h1><span id="typing-text"></span><span class="cursor">|</span></h1>
-        <p>Backend Developer | Java Enthusiast | Problem Solver</p>
-        <a href="#projects" class="btn">View My Work</a>
-    </section>
-
-    <section class="section" id="skills">
-        <h2 class="section-title">Technical Arsenal</h2>
-        <div class="skills-grid">
-            <div class="skill-tag">Java</div>
-            <div class="skill-tag">Data Structures</div>
-            <div class="skill-tag">Algorithms</div>
-            <div class="skill-tag">SQL / MySQL</div>
-            <div class="skill-tag">OOP Concepts</div>
-            <div class="skill-tag">Git & GitHub</div>
-            <div class="skill-tag">HTML/CSS</div>
+    <header class="hero">
+        <div class="hero-text">
+            <div class="greeting">👋 Hi, I'm Naveen</div>
+            <h1>I build <span>scalable</span><br>AI & Web Solutions.</h1>
+            <p>
+                MCA Student & Full Stack Developer. <br>
+                I specialize in <strong>Python, Java, and Machine Learning</strong> to create real-world applications.
+            </p>
         </div>
-    </section>
+        <div class="floating-shape">💻</div>
+    </header>
 
-    <section class="section" id="projects">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
+    <section id="projects" class="projects-section">
+        <h2 class="section-title">Things I've Built.</h2>
+        <div class="project-grid">
             
-            <div class="project-card">
-                <h3>Bank Management System</h3>
-                <span class="project-tech">Java • MySQL • OOP</span>
-                <p>A console-based application to handle customer transactions, account creation, and balance inquiries securely.</p>
-                <a href="#" style="text-decoration: underline;">View Code &rarr;</a>
+            <div class="card">
+                <h3>OutReach Mind</h3>
+                <span class="tech-stack">AI • LLM • Python</span>
+                <p>An AI-powered system that analyzes job postings and generates personalized sales emails using Large Language Models (LLMs).</p>
             </div>
 
-            <div class="project-card">
-                <h3>DSA Visualizer</h3>
-                <span class="project-tech">Java • Swing • Algorithms</span>
-                <p>An interactive tool helping students visualize sorting algorithms and linked list operations in real-time.</p>
-                <a href="#" style="text-decoration: underline;">View Code &rarr;</a>
+            <div class="card">
+                <h3>ForgeAI</h3>
+                <span class="tech-stack">Agentic AI • Automation</span>
+                <p>An autonomous AI system that transforms user prompts into working software plans and code through automated planning.</p>
             </div>
 
-            <div class="project-card">
-                <h3>Portfolio Website</h3>
-                <span class="project-tech">HTML • CSS • JavaScript</span>
-                <p>This fully responsive portfolio website, hosted on GitHub Pages, demonstrating frontend design capabilities.</p>
-                <a href="#" style="text-decoration: underline;">View Code &rarr;</a>
+            <div class="card">
+                <h3>Secura</h3>
+                <span class="tech-stack">MERN Stack • React • Security</span>
+                <p>A secure web application for password storage featuring encrypted data handling and an intuitive UI.</p>
             </div>
 
         </div>
     </section>
 
-    <footer id="contact">
-        <p>Built with pure code.</p>
-        <p>Email: contact@example.com | <a href="#" style="color:var(--accent-color)">LinkedIn</a></p>
+    <section id="experience" class="experience-section">
+        <h2 class="section-title">My Journey.</h2>
+        
+        <div class="timeline-item">
+            <span class="exp-role">Applied Machine Learning Trainee</span>
+            <div class="exp-company">Business Toys</div>
+            <span class="exp-date">Sep 2024 - Dec 2024</span>
+            <p>Worked on end-to-end ML workflows, model training with Scikit-learn, and data analysis using Pandas & NumPy.</p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="exp-role">Master of Computer Applications</span>
+            <div class="exp-company">Ramaiah Institute of Technology</div>
+            <span class="exp-date">Current | CGPA: 8.15</span>
+            <p>Specializing in Algorithms, Software Engineering, and Cloud Technologies.</p>
+        </div>
+
+    </section>
+
+    <footer id="contact" class="contact-section">
+        <h2 class="section-title">Let's Chat.</h2>
+        <p style="margin-bottom: 2rem; font-size: 1.2rem;">
+            I'm always open to discussing AI, Web Dev, or new opportunities.
+        </p>
+        <a href="mailto:naveenn.msrit@gmail.com" class="contact-btn">Pop me an email</a>
+        <br><br>
+        <p>
+            <a href="#" style="color: #777; text-decoration: underline;">LinkedIn</a>
+        </p>
     </footer>
 
-    <script>
-        // --- JAVASCRIPT FOR TYPING EFFECT ---
-        const textToType = "Your Name Here";
-        const typeElement = document.getElementById("typing-text");
-        let charIndex = 0;
-
-        function typeWriter() {
-            if (charIndex < textToType.length) {
-                typeElement.innerHTML += textToType.charAt(charIndex);
-                charIndex++;
-                setTimeout(typeWriter, 100);
-            }
-        }
-
-        // Start typing when page loads
-        window.onload = typeWriter;
-    </script>
 </body>
 </html>
